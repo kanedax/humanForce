@@ -35,7 +35,6 @@ const Login = () => {
             validationSchema={validationSchema}
         >
             {(formik)=>{
-                console.log(formik);
                 return(
                 <div className='main-container'>
                     <div className="row ">

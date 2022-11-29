@@ -7,11 +7,12 @@
 }
 @font-face {
     font-family: Byekan;
-    src: url('../assets/font/yekan/BYekan-webfont.woff');
+    src: url('../font/yekan/BYekan-webfont.woff');
 }
 .btn-handler{
     text-align: center;
     line-height: unset;
+    font-family: Byekan;
 }
 /* login page start */
 .main-container{
@@ -34,7 +35,7 @@
     width: 100vw;
 }
 .logo-container{
-    background: url('../assets/image/logo.PNG');
+    background: url('../image/logo.PNG');
     height: 35vh;
     width: 20vw;
     background-size: cover;
@@ -44,7 +45,7 @@
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image: url('../assets/image/3.webp');
+    background-image: url('../image/3.webp');
     height: 97vh;
     background-color: #EAEEF2;
 }

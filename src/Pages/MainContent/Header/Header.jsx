@@ -25,7 +25,7 @@ const Header = () => {
                 <li><a href="#!">two</a></li>
                 <li><a href="#!">two</a></li>
             </ul>
-            
+
         </div>
     );
 }
