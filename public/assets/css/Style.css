@@ -1,26 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Byekan;
 
 }
+
 @font-face {
     font-family: Byekan;
     src: url('../font/yekan/BYekan-webfont.woff');
 }
-.btn-handler{
+
+.btn-handler {
     text-align: center;
     line-height: unset;
     font-family: Byekan;
 }
+
 /* login page start */
-.main-container{
+.main-container {
     background-color: #EAEEF2;
     margin: 0;
     padding: 0;
 }
-.form-handler{
+
+.form-handler {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,20 +32,23 @@
     height: 97vh;
     background-color: #EAEEF2;
 }
-.justify-center{
+
+.justify-center {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
 }
-.logo-container{
+
+.logo-container {
     background: url('../image/logo.PNG');
     height: 35vh;
     width: 20vw;
     background-size: cover;
     background-position: center;
 }
-.image-handler{
+
+.image-handler {
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -49,35 +56,47 @@
     height: 97vh;
     background-color: #EAEEF2;
 }
-.error-handler{
+
+.error-handler {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
-.flex-display{
+
+.flex-display {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 55%;
 }
+
 /* login page end */
 /* Admin Page start */
-.main-container{
+.main-container {
     width: 100vw;
     height: 100vh;
     position: relative;
 }
-.admin-content{
+
+.admin-content {
     width: 100vw;
     height: 90vh;
     position: absolute;
     left: 0;
     top: 10vh;
 }
-/* admin navbar start */
 
-.avatar-container{
+/* admin navbar start */
+.avatar {
+    width: 100%;
+    background-color: #EAEEF2;
+    height: 20vh;
+    position: fixed;
+    top: 0;
+}
+
+.avatar-container {
     width: 80%;
     height: 15%;
     background-color: aliceblue;
@@ -85,38 +104,127 @@
     margin-top: -7vh;
     margin-bottom: 5vh;
 }
-.navbar-item{
+
+.navbar-item {
     display: block;
     direction: rtl;
     text-decoration: none;
 }
-.navbar-title{
+
+.navbar-title {
     margin-right: 15px;
 }
-.group-title-container{
+
+.group-title-container {
     text-decoration: none;
     list-style: none;
     font-size: 1.5vw;
 }
-.hamburger{
+
+.hamburger {
     display: flex;
 }
-.sidenav-ul{
+
+.sidenav-ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
 }
-.sidenav-ul li{
+
+.sidenav-ul li a {
+    color: snow;
+    font-size: 1.2vw;
+    width: 19vw;
+}
+
+.sidenav-ul li {
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-.ddbtn{
+
+.sidenav-ul i {
+    color: white;
+}
+
+#mobile-demo {
+    background: linear-gradient(180deg, rgba(38, 166, 154, 1) 50%, rgba(128, 203, 196, 1) 79%, rgba(178, 223, 219, 1) 100%);
+
+}
+
+.navbar-icon {
+    color: white;
+}
+
+.ddbtn {
     position: absolute;
     top: 1.5vh;
     left: 2vh;
 }
-.dditems li{
+
+.dditems li {
     text-align: center;
 }
+
+.dd-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-handler {
+    color: #26a69a;
+    margin-top: 7px;
+}
+
 /* admin navbar end */
+/* admin-content start */
+.admin-content {
+    position: fixed;
+    width: 100vw;
+    height: 95vh;
+    background-image: url('../image/body_back4.jpg');
+    top: 7.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* admin-content end */
 /* admin page end */
+/* multiPageForm Start */
+.form-container{
+    width: 70vw;
+    height: 60vh;
+    background-color: snow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0px 0px 18px rgb(179, 178, 178) ;
+}
+.submit-container{
+    margin-top: 3vh;
+    font-family: Byekan;
+}
+.title-container{
+    text-align: center;
+    color: #26a69a;
+    font-size: 2.5vw;
+}
+.form-part{
+    position: relative;
+}
+.error-handler{
+    position: absolute;
+}
+/* multiPageForm end */

@@ -1,29 +1,41 @@
-import M from 'materialize-css';
+import axios from 'axios';
 import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import useLogin from '../../hooks/AuthLogin';
+import { sidenav } from '../../utils/sidenav';
 import Header from './Header/Header';
-
+import MultiPageForm from './MultiPageForm/MultiPageForm';
 
 
 const AdminIndex = () => {
-    
     useEffect(() => {
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {
-              edge : 'right',
-            });
-          });
+        sidenav();
     }, []);
+    const [loading, isLogin] = useLogin()
 
     return (
-        <div className='Admin-main-container'>
-            <div className='admin-header red'>
-                <Header/>
-            </div>
-            <div className='admin-content'>
+        <>
+            {
+                loading ? (
+                    <h4> لطفا صبر کنید... </h4>
+                ) : isLogin ? (
+                    <>
+                        <div className='Admin-main-container'>
+                            <div className='admin-header red'>
+                                <Header />
+                            </div>
+                            <div className='admin-content'>
+                                <MultiPageForm />
+                            </div>
+                        </div>
+                    </>
 
-            </div>
-        </div>
+                ) : (
+                    <Navigate to={'/auth/login'} />
+                )
+            }
+        </>
     );
 }
 
