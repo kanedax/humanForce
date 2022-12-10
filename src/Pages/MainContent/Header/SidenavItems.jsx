@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SidenavItems = () => {
     return (
         <div>
             <li >
                 <i className='fa-regular fa-user sidenav-items1'></i>
-                <a href="#">مدیریت کارمندان</a>
+                <Link to={'/multipageform'}>مدیریت کارمندان</Link>
             </li>
             <li >
                 <i className='fa-regular fa-user'></i>

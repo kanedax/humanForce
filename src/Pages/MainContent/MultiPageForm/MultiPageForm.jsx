@@ -5,16 +5,18 @@ import Form from './Form';
 
 const MultiPageForm = () => {
     useEffect(() => {
-        
+        require('../../../utils/sidenav')
 
     }, []);
     return (
         <>
-            <section>
-                <div className="multiform-container row">
-                    <Form/>
-                </div>
-            </section>
+            <div className='admin-content'>
+                <section>
+                    <div className="multiform-container row">
+                        <Form />
+                    </div>
+                </section>
+            </div>
         </>
     );
 }

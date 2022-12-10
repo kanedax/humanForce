@@ -1,19 +1,28 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import Login from './Pages/Login/Login';
-import AdminIndex from './Pages/MainContent/AdminIndex';
+import AuthLayout from './Pages/AuthLayout/AuthLayout';
+import AdminIndex from './Pages/MainContent/AdminIndex/AdminIndex';
+import RouteMap from './Pages/MainContent/AdminIndex/RouteMap';
+
 
 const Index = () => {
-    const location = useLocation()
+    const location = useLocation();
+
     return (
         <div>
             {
                 location.pathname.includes('/auth') ? (
-                    <Login />
+                    <AuthLayout />
+
                 ) : (
+
+                    <>
                     <AdminIndex />
+                    <RouteMap/>
+                    </>
                 )
             }
+
         </div>
     );
 }

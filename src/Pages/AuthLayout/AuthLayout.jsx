@@ -1,26 +1,34 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import useLogin from '../../hooks/AuthLogin';
-import Login from './Login';
 
-const AuthLoginConditional = () => {
+import Login from '../Login/Login';
+
+const AuthLayout = () => {
+
     const [loading, isLogin] = useLogin()
+
     return (
-        <>
-            {loading ? (
-                <h4>لطفا صبر کنید...</h4>
-            ) :
-                !isLogin ? (
+        <div>
+            {
+                loading ?  (
+
+                    <h4>لطفا صبر کنید...</h4>
+
+                ) : !isLogin ? (
+
                     <Routes>
                         <Route path='/auth/login' element={<Login />} />
                     </Routes>
 
-                ) : (
-                    <Navigate to={'/'} />
+            ):  (
+
+                    <Navigate to={"/"} />
+
                 )
             }
-        </>
+        </div>
     );
 }
 
-export default AuthLoginConditional;
+export default AuthLayout;

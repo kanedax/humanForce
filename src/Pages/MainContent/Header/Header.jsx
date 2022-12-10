@@ -5,7 +5,7 @@ import SidenavItems from './SidenavItems';
 const Header = () => {
 
     return (
-        <div>
+        <div className='admin-header red'>
             <nav>
                 <div className="nav-wrapper hamburger teal lighten-1">
                     <a href="#" data-target="mobile-demo" className="sidenav-trigger show-on-large">

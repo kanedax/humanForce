@@ -4,6 +4,7 @@ import FormikControl from '../../Components/Formik/FormikControl';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Alert } from '../../Components/Alert';
 
 
 
@@ -11,19 +12,21 @@ import { useNavigate } from 'react-router-dom';
 const initialValues = {
     personalCode: "",
     password: "",
-    // remember: false,
 }
 
-const onSubmit = async (values, navigate) => {
+const onSubmit = async (values, submitMethods, navigate) => {
    await axios.post('http://45.138.135.108:8080/api/Auth/login' , values).then(res=>{
-    console.log(res);
         if(res.status == 200){
             localStorage.setItem('loginToken', JSON.stringify(res.data));
             navigate('/');
-            console.log(res.data.data.token);
+            Alert("خوش آمدید", "شما با موفقیت وارد شدید", "success")
+            submitMethods.setSubmitting(false)
+        }else{
+            Alert("متاسفم!", "مشخصات وارد شده صحیح نمیباشد.", "warning")
+            submitMethods.setSubmitting(false)
         }
    }).catch(error=>{
-    console.log(error);
+    Alert("متاسفم", "ایرادی از سمت سرور رخ داده است", "error")
    })
 }
 
@@ -37,7 +40,6 @@ const validationSchema = Yup.object({
             /^(?=.*[0-9])(?=.{8,})/,
             "حداقل از هشت عدد استفاده شود"
         )
-    // remember: Yup.boolean(),
 })
 
 const Login = () => {
@@ -46,7 +48,7 @@ const Login = () => {
         <Formik
 
             initialValues={initialValues}
-            onSubmit={(values)=>onSubmit(values, navigate)}
+            onSubmit={(values, submitMethods)=>onSubmit(values,submitMethods, navigate)}
             validationSchema={validationSchema}
         >
             {(formik) => {
@@ -78,12 +80,6 @@ const Login = () => {
                                     className=" input-field col s12"
                                 />
                                 <div className="row flex-display">
-                                    <FormikControl
-                                        control="Checkbox"
-                                        label="مرا به خاطر بسپار"
-                                        type="checkbox"
-                                        name="remember"
-                                    />
                                     <div className='col s3'>
                                         <button className="waves-effect waves-light btn btn-handler" type='submit'
                                             disabled={formik.isSubmitting} >

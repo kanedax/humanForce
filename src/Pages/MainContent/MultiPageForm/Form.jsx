@@ -66,6 +66,7 @@ const Forms = () => {
         >
             {
                 (formik) => {
+                    console.log(formik.values);
                     return (
                         <Form>
                             <div className="form-container">
@@ -89,11 +90,12 @@ const Forms = () => {
                                         title="نام خانوادگی"
                                     />
                                     <FormikControl
-                                        control="input1"
+                                        control="select"
                                         name="gender"
-                                        type="text"
-                                        className="validate"
-                                        title="جنسیت"
+                                        label="جنسیت"
+                                        option1="لطفا انتخاب کنید..."
+                                        option2="مرد"
+                                        option3="زن"
                                     />
                                     <FormikControl
                                         control="input1"
@@ -138,18 +140,12 @@ const Forms = () => {
                                         title="رشته تحصیلی"
                                     />
                                     <FormikControl
-                                        control="input1"
-                                        name="milistatus"
-                                        type="text"
-                                        className="validate"
-                                        title="وضعیت نظام وظیفه"
-                                    />
-                                    <FormikControl
-                                        control="input1"
+                                        control="switch"
+                                        type="checkbox"
+                                        label1="هست"
+                                        label2="نیست"
+                                        className="lever"
                                         name="isarmy"
-                                        type="text"
-                                        className="validate"
-                                        title="پرسنل نیروهای مسلح"
                                     />
                                     <div className='form-part col s5 submit-container'>
                                         <button className='btn waves-effect' type='submit'>

@@ -10,7 +10,7 @@ const DropDownItems = () => {
             <li className="divider" tabIndex="-1"></li>
             <li className='dd-link' >
                 <i className='fas fa-power-off icon-handler'></i>
-                <Link to={"/logout"}> خروج</Link>
+                <Link to={'/logout'}>خروج</Link>
             </li>
         </div>
     );

@@ -42,10 +42,11 @@
 
 .logo-container {
     background: url('../image/logo.PNG');
-    height: 35vh;
-    width: 20vw;
-    background-size: cover;
+    height: 40%;
+    width: 55%;
+    background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .image-handler {
@@ -199,6 +200,14 @@
 }
 
 /* admin-content end */
+.main-content-container{
+    background-image: url('../image/body_back4.jpg');
+    width: 100%;
+    height: 92vh;
+    position: fixed;
+    top: 7.5vh;
+
+}
 /* admin page end */
 /* multiPageForm Start */
 .form-container{
@@ -215,6 +224,9 @@
 .submit-container{
     margin-top: 3vh;
     font-family: Byekan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .title-container{
     text-align: center;
@@ -226,5 +238,15 @@
 }
 .error-handler{
     position: absolute;
+}
+.switch-pro{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.switch-label{
+    font-size: 1.2vw;
 }
 /* multiPageForm end */

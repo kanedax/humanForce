@@ -2,6 +2,7 @@ import Input from '../Formik/Input';
 import Checkbox from './Checkbox';
 import Input1 from './Input1';
 import Select from './Select';
+import Switch from './Switch';
 
 const FormikControl = (props) => {
     switch (props.control) {
@@ -13,6 +14,8 @@ const FormikControl = (props) => {
             return <Checkbox {...props} />
         case 'select':
             return <Select {...props} />
+            case 'switch':
+                return <Switch {...props} />
         default:
             return null
     }

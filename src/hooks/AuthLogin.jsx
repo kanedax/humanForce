@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const useLogin = ()=>{
+const useLogin = () => {
     const [isLogin, setIsLogin] = useState(false);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -13,7 +13,6 @@ const useLogin = ()=>{
                     'Authorization': `Bearer ${loginToken.data.token}`
                 }
             }).then(res => {
-                console.log(res);
                 setIsLogin(res.status == 200 ? true : false)
                 setLoading(false)
             }).catch(e => {
@@ -26,6 +25,6 @@ const useLogin = ()=>{
             setLoading(false)
         }
     }, [])
-    return[loading, isLogin]
+    return [loading, isLogin]
 }
 export default useLogin;
